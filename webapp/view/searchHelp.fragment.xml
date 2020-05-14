@@ -1,0 +1,92 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<TableSelectDialog title="{/appProperties/f4title}" search="handleSearch" confirm="handleConfirm" cancel="handleClose"
+		items="{/searchHelpData}">
+		<items>
+			<ColumnListItem type="Navigation" press="handleConfirm">
+				<cells>
+					<Text text="{ACCOUNT}"/>
+					<Text text="{FULLNAME}"/>
+					<Text text="{COMPANYCODE}"/>
+					<Text text="{DEPARTMENT}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+		<columns>
+			<Column>
+				<Text text="賬號"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="姓名"/>
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+				<Text text="公司"/>
+			</Column>
+			<Column hAlign="End">
+				<Text text="部門"/>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+	<!--<Panel id="f4Panel" expandable="true" expanded="true" width="auto">-->
+	<!--	<headerToolbar>-->
+	<!--		<Toolbar height="3rem">-->
+	<!--			<Title text="过滤条件" />-->
+	<!--			<Button icon="sap-icon://search" press="onSearch"/>-->
+	<!--		</Toolbar>-->
+	<!--	</headerToolbar>-->
+	<!--	<f:Form editable="true">-->
+	<!--			<f:layout>-->
+	<!--				<f:ResponsiveGridLayout labelSpanL="1"-->
+	<!--					labelSpanM="1" emptySpanL="1" emptySpanM="1" columnsL="2"-->
+	<!--					columnsM="2" />-->
+	<!--			</f:layout>-->
+	<!--			<f:formContainers>-->
+	<!--				<f:FormContainer>-->
+	<!--					<f:formElements>-->
+	<!--						<f:FormElement>-->
+	<!--							<f:fields>-->
+	<!--								<l:HorizontalLayout>-->
+	<!--									<Label text="{/appProperties/f4title}" width="6rem"/>-->
+	<!--									<Input value="{/searchHelp/Zvkey1}" width="8rem"/>-->
+	<!--								</l:HorizontalLayout>-->
+	<!--							</f:fields>-->
+	<!--						</f:FormElement>-->
+	<!--						<f:FormElement>-->
+	<!--							<f:fields>-->
+	<!--								<l:HorizontalLayout>-->
+	<!--									<Label text="名称" width="6rem"/>-->
+	<!--									<Input value="{/searchHelp/Note1}" width="8rem"/>-->
+	<!--								</l:HorizontalLayout>-->
+	<!--							</f:fields>-->
+	<!--						</f:FormElement>-->
+	<!--						<f:FormElement>-->
+	<!--							<f:fields>-->
+	<!--								<l:HorizontalLayout>-->
+	<!--									<Label text="最大命中数量" width="6rem"/>-->
+	<!--									<Input value="{/searchHelp/EMaxrecords}" width="8rem"/>-->
+	<!--								</l:HorizontalLayout>-->
+	<!--							</f:fields>-->
+	<!--						</f:FormElement>-->
+	<!--					</f:formElements>-->
+	<!--				</f:FormContainer>-->
+	<!--			</f:formContainers>-->
+	<!--		</f:Form>-->
+	<!--</Panel>-->
+	<!--<Table items="{/searchHelp/f4h2r}">-->
+	<!--	<columns>-->
+	<!--		<Column demandPopin="true" width="40%">-->
+	<!--			<Text text="{/appProperties/f4title}" />-->
+	<!--		</Column>-->
+	<!--		<Column demandPopin="true" width="60%">-->
+	<!--			<Text text="{/appProperties/f4title}名称" />-->
+	<!--		</Column>-->
+	<!--	</columns>-->
+	<!--	<items>-->
+	<!--		<ColumnListItem type="Navigation" press="pressEvent">-->
+	<!--			<cells>-->
+	<!--				<Text text="{path:'Zvkey1', formatter:'.formatter.deleteLeftZero'}" />-->
+	<!--				<Text text="{Note1}" />-->
+	<!--			</cells>-->
+	<!--		</ColumnListItem>-->
+	<!--	</items>-->
+	<!--</Table>-->
+</core:FragmentDefinition>

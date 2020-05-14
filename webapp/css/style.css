@@ -1,0 +1,21 @@
+/* Enter your custom styles here */
+
+#__layout11 {
+    padding-top: 0;
+}
+
+#__container1--Grid {
+    padding-bottom: 0;
+}
+
+.sapUxAPObjectPageSectionHeader {
+    padding: 0 0rem 0 1rem;
+}
+
+.sapUiSizeCompact.sapUxAPObjectPageLayout-Std-Desktop.sapUxAPBlockContainer {
+    padding: 1rem 2rem 2rem 0.7rem;
+}
+
+sapUiVltCell.TextArea {
+    padding-bottom: 0;
+}

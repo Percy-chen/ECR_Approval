@@ -1,0 +1,110 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ECR.ECR_Approval.controller.ECRLIST"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<Page title="ECR清單">
+			<content>
+				<f:Form editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="0" emptySpanM="0" columnsL="3" columnsM="2"/>
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement>
+									<f:fields>
+										<l:HorizontalLayout>
+											<Text text="ECR编号:" width="6em" textAlign="Begin"/>
+											<Input id="ECRNO" value="{/Search/ECRNO}"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Text text="發起單位:" width="6em" textAlign="Begin"/>
+											<Input id="ORGANIZATION" value="{/Search/ORGANIZATION}"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Text text="填單日期:" width="6em" textAlign="Begin"/>
+											<DatePicker id="FORMDATE" value="{/Search/FORMDATE}" editable="true" valueFormat="yyyyMMdd" placeholder=" "/>
+										</l:HorizontalLayout>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement>
+									<f:fields>
+										<l:HorizontalLayout>
+											<Text text="Part/Model:" width="6em" textAlign="Begin"/>
+											<Input id="MODELNO" value="{/Search/MODELNO}"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Text text="填表人:" width="6em" textAlign="Begin"/>
+											<Input id="LISER" value="{/Search/LISER}" showValueHelp="true" valueHelpRequest="openValuHelpDialog" valueHelpOnly="true"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Text text="申請人:" width="6em" textAlign="Begin"/>
+											<Input id="REQUESTER" value="{/Search/REQUESTER}" showValueHelp="true" valueHelpRequest="openValuHelpDialog" valueHelpOnly="true"/>
+										</l:HorizontalLayout>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<Table id="ItemTable" inset="false" items="{ path: '/ECRList'}" class="sapFDynamicPageAlignContent" width="auto" mode="MultiSelect"
+					busyIndicatorDelay="10" growing="true" growingScrollToLoad="true">
+					<headerToolbar>
+						<OverflowToolbar>
+							<Title text="ECR清單" level="H2"/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column hAlign="Begin">
+							<Text text="序号"/>
+						</Column>
+						<Column hAlign="Begin">
+							<Text text="审核结果"/>
+						</Column>
+						<Column hAlign="Begin">
+							<Text text="ECR编号"/>
+						</Column>
+						<Column hAlign="Begin" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+							<Text text="發起單位 "/>
+						</Column>
+						<Column hAlign="Begin" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+							<Text text="填單日期"/>
+						</Column>
+						<Column hAlign="Begin">
+							<Text text="Part/Model NO."/>
+						</Column>
+						<Column hAlign="Begin">
+							<Text text="填表人"/>
+						</Column>
+						<Column hAlign="Begin" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+							<Text text="申請人 "/>
+						</Column>
+						<Column hAlign="Begin" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+							<Text text="變更原因"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation" press="goback">
+							<cells>
+								<Text text="{ItemNum}"/>
+								<Text text="{RESULT}"/>
+								<Text text="{ECRNO}"/>
+								<Text text="{ORGANIZATION}"/>
+								<Text text="{FORMDATE}"/>
+								<Text text="{MODELNO}"/>
+								<Text text="{LISER}"/>
+								<Text text="{REQUESTER}"/>
+								<Text text="{CHANGEREASON}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</content>
+			<footer>
+				<OverflowToolbar>
+					<ToolbarSpacer/>
+					<Button text="查询" id="butSubmit" type="Accept" press="handleSearch" width="6rem"/>
+				</OverflowToolbar>
+			</footer>
+		</Page>
+	</App>
+</mvc:View>

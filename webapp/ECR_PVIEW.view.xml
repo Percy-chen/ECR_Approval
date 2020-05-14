@@ -1,0 +1,75 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<App id="app">
+		<Page id="page" title="ECR">
+			<content>
+				<f:Form editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="0" emptySpanM="0" columnsL="3" columnsM="2"/>
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement>
+									<f:fields>
+										<l:HorizontalLayout>
+											<Text text="ECR主旨:" width="6em" textAlign="Begin"/>
+											<Input id="ECRSUBJECT" value="{/ECRData/ECRSUBJECT}" width="40em"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Text text="發起單位:" width="6em" textAlign="Begin"/>
+											<Input id="ORGANIZATION" value="{/ECRData/ORGANIZATION}"/>
+										</l:HorizontalLayout>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement>
+									<f:fields>
+										<l:HorizontalLayout>
+											<Text text="填單日期:" width="6em" textAlign="Begin"/>
+											<DatePicker id="FORMDATE" value="{paht:'/ECRData/FORMDATE',formatter:'.formatter.date'}" width="10em" editable="true" valueFormat="yyyyMMdd" placeholder=" "/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Text text="所屬部門:" width="6em" textAlign="Begin"/>
+											<Input id="DEPARTMENT" value="{/ECRData/DEPARTMENT}"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Text text="填表人:" width="6em" textAlign="Begin"/>
+											<Input id="LISER" value="{/ECRData/LISER}"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Text text="申請人:" width="6em" textAlign="Begin"/>
+											<Input id="REQUESTER" value="{/ECRData/REQUESTER}"/>
+										</l:HorizontalLayout>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement>
+									<f:fields>
+										<l:HorizontalLayout>
+											<Text text="Part/Model:" width="6em" textAlign="Begin"/>
+											<Input id="MODELNO" value="{/ECRData/MODELNO}"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Text text="主辦工程師:" width="6em" textAlign="Begin"/>
+											<Input id="MAINENGINEER" value="{/ECRData/MAINENGINEER}"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout></l:HorizontalLayout>
+										<l:HorizontalLayout></l:HorizontalLayout>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+					<Text text="變更原因" class="sapUiTinyMarginTop"/>
+					<TextArea id="CHANGEREASON" value="{/ECRData/CHANGEREASON}" showExceededText="true" maxLength="200" width="100%"/>
+					<Text text="建議方式" class="sapUiTinyMarginTop"/>
+					<TextArea id="ADVISE" showExceededText="true" maxLength="200" width="100%" value="{/ECRData/ADVISE}"/>
+					<Text text="未變更之後影響" class="sapUiTinyMarginTop"/>
+					<TextArea id="NOCHANGEIMPACT" value="{/ECRData/NOCHANGEIMPACT}" maxLength="200" width="100%" showExceededText="true"/>
+					<Text text="協辦工程師" class="sapUiTinyMarginTop"/>
+					<TextArea value="{/ECRData/SECONDENGINEER}" maxLength="40" width="100%"/>
+				</l:VerticalLayout>
+			</content>
+		</Page>
+	</App>
+</mvc:View>
